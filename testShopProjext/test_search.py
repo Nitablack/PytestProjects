@@ -1,6 +1,6 @@
 import pytest  # подключаем библиотеку pytest
 from selenium import webdriver  # подключаем библиотеку selenium
-from pages.search import SearchPage  # добавляем PageObject wiki
+from pages.search import SearchPage  # добавляем PageObject
 
 driver = webdriver.Chrome()  # определяем переменную для webdriver
 search = SearchPage(driver)  # определяем переменную для PageObject и делаем объект класса нашей страницы
