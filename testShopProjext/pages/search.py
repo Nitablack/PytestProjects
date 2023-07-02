@@ -3,7 +3,7 @@ class SearchPage: # описываем класс, который будет о�
     URL = 'http://testshop.sedtest-school.ru/' # указываем страницу авторизации
     #TITLE = (By.ID, 'mp-welcome')
     SEARCH_INPUT = (By.CSS_SELECTOR, '.form-group [name="search"]')
-    #SEARCH_BUTTON = (By.CSS_SELECTOR, '#searchform button')
+    CARD_BODY = (By.CSS_SELECTOR, 'h5>.text-info')
     #HEADER = (By.CSS_SELECTOR, "#firstHeading")
 
     def __init__(self, driver):
@@ -19,3 +19,5 @@ class SearchPage: # описываем класс, который будет о�
         self.driver.find_element(*self.SEARCH_INPUT).send_keys(word)
         self.driver.find_element(*self.SEARCH_INPUT).send_keys('\ue007')
         self.driver.implicitly_wait(5000)
+        card = self.driver.find_element(*self.CARD_BODY).text  # переменная для проверки поиска
+        assert word in card, "test failed"  # проверка результата поиска
