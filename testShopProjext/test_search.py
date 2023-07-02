@@ -12,8 +12,10 @@ def pre_test(request): # в которой вызываем функцию
 def teardown_module(module): # делаем фикстуру закрытия браузера,
     driver.close()           # которая будет выполняться после всех тестов
 
+@pytest.mark.smoke
 def test_search_car(pre_test): # поиск с основной страницы
     search.search('car')
 
+@pytest.mark.slow
 def test_search_apple():  # повторный поиск
     search.search('яблоко')
