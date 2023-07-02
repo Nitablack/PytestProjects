@@ -15,5 +15,5 @@ def teardown_module(module): # делаем фикстуру закрытия б
 def test_search_car(pre_test): # поиск с основной страницы
     search.search('car')
 
-def test_search_abc():  # повторный поиск
+def test_search_apple():  # повторный поиск
     search.search('яблоко')
